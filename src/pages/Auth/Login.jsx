@@ -36,23 +36,26 @@ function LoginPage() {
         <div className="kiri-auth w-[60%]  lg:inline-block  h-screen fixed"></div>
         <div className="kiri-authd w-[60%]  lg:inline-block  h-screen"></div>
 
-        <div className="kanan  lg:w-[40%] lg:container">
-          <h1 className="text-2xl font-bold  my-4">{BrandName}</h1>
-          <Slider className="" {...settings}>
-            {iklanItems.map((list) => (
-              <a
-                href="#"
-                className="h-56 w-full  flex text-center justify-center items-center rounded-lg shadow-lg"
-              >
-                <div
-                  className="inline-block my-auto mx-auto w-full h-full bg-cover lg:rounded-lg "
-                  style={{
-                    backgroundImage: `url(${list.bg})`,
-                  }}
-                ></div>
-              </a>
-            ))}
-          </Slider>
+        <div className="kanan flex flex-col justify-between   lg:w-[40%] lg:container">
+          <div>
+
+            <h1 className="text-2xl mx-[20px] lg:mx-0 font-bold  my-3">{BrandName}</h1>
+            <Slider className="" {...settings}>
+              {iklanItems.map((list) => (
+                <a
+                  href="#"
+                  className="h-56 w-full  flex text-center justify-center items-center rounded-lg shadow-lg"
+                >
+                  <div
+                    className="inline-block my-auto mx-auto w-full h-full bg-cover lg:rounded-lg "
+                    style={{
+                      backgroundImage: `url(${list.bg})`,
+                    }}
+                  ></div>
+                </a>
+              ))}
+            </Slider>
+          </div>
           <div className="px-3 lg:px-0">
             <div className="card  w-full rounded-md shadow-lg border-[1px] dark:border-gray-600 m-auto px-3 py-4 mt-10  ">
               <p>Login / Daftar</p>
@@ -95,7 +98,10 @@ function LoginPage() {
                 ))}
               </div>
             </div>
-            <p className="flex w-full justify-center mt-12 mb-5 text-gray-400 text-sm">	&copy; 2022 - <a href="#" className="cursor-pointer text-blue-500 text-center ml-1"> NamaTimDeveloper</a></p>
+          </div>
+          <div>
+
+            <p className="flex w-full justify-center mt-9 mb-5 text-gray-400 text-sm">	&copy; 2022 - <a href="#" className="cursor-pointer text-blue-500 text-center ml-1"> NamaTimDeveloper</a></p>
           </div>
         </div>
 
