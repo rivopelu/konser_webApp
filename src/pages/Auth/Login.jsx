@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BtnComp, InputComp, ToggleTheme } from "../../components";
 import { BrandName } from "../../utils";
 import "./auth.scss";
@@ -11,8 +11,14 @@ import gambar3 from "./img/iklan3.jpg";
 import icon1 from "./img/logo/google.png";
 import icon2 from "./img/logo/facebook.svg";
 import icon3 from "./img/logo/apple.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash, faUser } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function LoginPage() {
+
+  const [mata, setMata] = useState(false)
+
   const authApi = [
     { icon: icon1, title: "Goggle" },
     { icon: icon2, title: "Facebook" },
@@ -62,13 +68,34 @@ function LoginPage() {
               <p className=" mb-6 text-sm text-gray-400 ">
                 Lorem ipsum dolor sit amet consectetur.
               </p>
-              <InputComp
-                title={"Nomor Ponsel Atau Email"}
-                id={"formUtama"}
-                placeholder={"Example@mail.com"}
-                className={"mb-3"}
-              />
 
+              <div className="relative ">
+
+                <InputComp
+                  title={"Nomor Ponsel Atau Email"}
+                  id={"formUtama"}
+                  type={'text'}
+                  placeholder={"Example@mail.com"}
+                  className={"mb-3 w-full pr-9 "}
+                />
+
+                <FontAwesomeIcon icon={faUser} className='absolute right-3 bottom-6 text-gray-600' />
+              </div>
+
+              <div className="relative ">
+
+                <InputComp
+                  title={"Password"}
+                  id={"formPassword"}
+                  placeholder={"*******"}
+                  type={mata ? 'password' : 'text'}
+                  className={"mb-3 w-full pr-9 "}
+                />
+
+                <FontAwesomeIcon onClick={() => setMata(!mata)} icon={mata ? faEye : faEyeSlash} className='absolute right-3 bottom-6 text-gray-600 cursor-pointer' />
+              </div>
+
+              <p className="text-sm text-gray-400">Belum Mempunyai Akun ? <Link className="text-blue-500 cursor-pointer" to={'/register'}>Silahkan Daftar</Link></p>
               <BtnComp
                 title={"lanjutkan"}
                 className={

@@ -2,8 +2,10 @@
   .kiri-auth {
     background: url("./img/lgImg.jpg");
     background-size: cover;
-    border-radius: 0 10px 10px 0;
-    box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.25);
+  }
+  .kiri-auth-register {
+    background: url("./img/registerBg.jpg");
+    background-size: cover;
   }
   .kiri-authd {
     background-size: cover;
